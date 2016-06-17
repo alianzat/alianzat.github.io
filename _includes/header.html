@@ -1,0 +1,27 @@
+<header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+        <span class="mdl-layout__title">{{ site.title }}</span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+          {% for my_page in site.pages %}
+            {% unless page.exclude %}
+              {% if my_page.title %}
+              <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+              {% endif %}
+            {% endunless %}
+          {% endfor %}
+        </nav>
+    </div>
+</header>
+<div class="mdl-layout__drawer">
+    <span class="mdl-layout__title">{{ site.title }}</span>
+    <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+      {% for my_page in site.pages %}
+        {% unless page.exclude %}
+          {% if my_page.title %}
+          <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+    </nav>
+</div>

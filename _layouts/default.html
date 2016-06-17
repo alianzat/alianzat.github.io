@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    {% include header.html %}
+
+    <main class="mdl-layout__content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    </div>
+    <!--  jQuery 1.7+  -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- Include js plugin -->
+    <script src="{{ "/js/owl.carousel.js" | prepend: site.baseurl }}"></script>
+    <!-- MDL js -->
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  </body>
+</html>
