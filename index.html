@@ -1,20 +1,24 @@
 ---
+title: Miembros
 layout: default
+order: 1
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+<div class="mdl-grid portfolio-max-width">
+    {% for member in site.members %}
+      <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+          <img class="article-image" src="{{ member.logo | prepend: site.baseurl }}" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">{{ member.name }}</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          {{ member.content }}
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ member.website }}">Sitio Web</a>
+        </div>
+      </div>
     {% endfor %}
-  </ul>
 </div>

@@ -1,10 +1,15 @@
-<header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-        <span class="mdl-layout__title">{{ site.title }}</span>
-        <div class="mdl-layout-spacer"></div>
+<header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+    <div class="mdl-layout__header-row portfolio-logo-row">
+        <span class="mdl-layout__title">
+            <div class="portfolio-logo"></div>
+            <span class="mdl-layout__title">{{ site.title }}</span>
+        </span>
+    </div>
+    <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
         <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-          {% for my_page in site.pages %}
-            {% unless page.exclude %}
+          {% assign sorted_pages = site.pages | sort:"order" %}
+          {% for my_page in sorted_pages %}
+            {% unless my_page.exclude %}
               {% if my_page.title %}
               <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
               {% endif %}
@@ -13,11 +18,10 @@
         </nav>
     </div>
 </header>
-<div class="mdl-layout__drawer">
-    <span class="mdl-layout__title">{{ site.title }}</span>
+<div class="mdl-layout__drawer mdl-layout--small-screen-only">
     <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-      {% for my_page in site.pages %}
-        {% unless page.exclude %}
+      {% for my_page in sorted_pages %}
+        {% unless my_page.exclude %}
           {% if my_page.title %}
           <a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
           {% endif %}

@@ -7,15 +7,21 @@
 
 # Site settings
 title: Alianza Tecnológica
-email: marco@interastar.com
+email: contacto@alianzat.org
 description: > # this means to ignore newlines until "baseurl:"
   Alianza Tecnológica es una asociación de empresas de tecnología que buscan
   promover proyectos de alta calidad en México.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://alianzat.org" # the base hostname & protocol for your site
 twitter_username: interastar
 github_username:  alianzat
 
 # Build settings
 markdown: kramdown
 repository: alianzat/alianzat.github.io
+
+# Colecciones
+collections:
+  members:
+    defaults:
+      logo: "/img/default.png"

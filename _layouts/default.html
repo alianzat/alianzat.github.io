@@ -14,9 +14,10 @@
     </div>
     <!--  jQuery 1.7+  -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <!-- Include js plugin -->
-    <script src="{{ "/js/owl.carousel.js" | prepend: site.baseurl }}"></script>
     <!-- MDL js -->
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <script async src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <!-- Include carrousel js plugin -->
+    <script async src="{{ "/plugins/owl-carousel/owl.carousel.min.js" | prepend: site.baseurl }}"></script>
+    <script>$( "a[href='{{ page.url | remove: "index.html" }}']" ).addClass("is-active");</script>
   </body>
 </html>
